@@ -31,7 +31,7 @@ echo "Searching for resources using launch template: $launch_template_id (region
 echo ""
 
 echo "=== Auto Scaling Groups ==="
-check_resources "ASGs" "aws autoscaling describe-auto-scaling-groups --region '$region' --query \"AutoScalingGroups[?LaunchTemplate.LaunchTemplateId=='${launch_template_id}'].[AutoScalingGroupName,LaunchTemplate.LaunchTemplateId]\" --output table"
+check_resources "ASGs" "aws autoscaling describe-auto-scaling-groups --region '$region' --query \"AutoScalingGroups[?LaunchTemplate.LaunchTemplateId=='${launch_template_id}'].[AutoScalingGroupName,LaunchTemplate.LaunchTemplateId,join('',['https://','${region}','.console.aws.amazon.com/ec2/home?region=','${region}','#AutoScalingGroupDetails:id=',AutoScalingGroupName])]\" --output table"
 
 echo ""
 echo "=== EC2 Fleet Requests ==="
