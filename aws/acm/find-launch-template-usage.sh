@@ -8,7 +8,7 @@ if [[ $# -lt 1 ]]; then
 fi
 
 launch_template_id="$1"
-region="${2:-us-east-1}"
+region="${2:-${AWS_REGION:-us-east-1}}"
 
 if [[ ! "$launch_template_id" =~ ^lt- ]]; then
   echo "Error: Invalid launch template ID format: $launch_template_id" >&2
