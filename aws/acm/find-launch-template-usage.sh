@@ -3,12 +3,12 @@ set -euo pipefail
 
 if [[ $# -lt 1 ]]; then
   echo "Usage: $0 <launch-template-id> [region]" >&2
-  echo "Example: $0 lt-0123456789abcdef0 us-west-2" >&2
+  echo "Example: $0 lt-0123456789abcdef0 us-east-1" >&2
   exit 1
 fi
 
 launch_template_id="$1"
-region="${2:-us-west-2}"
+region="${2:-us-east-1}"
 
 if [[ ! "$launch_template_id" =~ ^lt- ]]; then
   echo "Error: Invalid launch template ID format: $launch_template_id" >&2
