@@ -1,0 +1,11 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pyarrow = "*"
+psycopg2-binary = "*"
+
+[requires]
+python_version = "3.14.5"
